@@ -11,11 +11,11 @@ env:
   PORT: 8080
 jobs:
   test:
+    environment: testing
     env:
       MONGODB_CLUSTER_ADDRESS: 127.0.0.1:27017
-      MONGODB_USERNAME: ${{ secrets.MONGODB_USERNAME }}
+      MONGODB_USERNAME: ${{ secrets.MONGODB_USERNAME  }}
       MONGODB_PASSWORD: ${{ secrets.MONGODB_PASSWORD }}
-    environment: testing
     runs-on: ubuntu-latest
     steps:
       - name: Get Code
